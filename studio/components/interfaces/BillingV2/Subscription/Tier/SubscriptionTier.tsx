@@ -4,11 +4,12 @@ import SparkBar from 'components/ui/SparkBar'
 import { useProjectSubscriptionV2Query } from 'data/subscriptions/project-subscription-v2-query'
 import dayjs from 'dayjs'
 import { useSubscriptionPageStateSnapshot } from 'state/subscription-page'
-import { Alert, Button } from 'ui'
+import { Alert, Button, IconCalendar, IconClock, IconCreditCard, IconExternalLink } from 'ui'
 import TierUpdateSidePanel from './TierUpdateSidePanel'
 import Link from 'next/link'
 import { useFlag } from 'hooks'
 import ProjectUpdateDisabledTooltip from '../../ProjectUpdateDisabledTooltip'
+import Panel from 'components/ui/Panel'
 
 export interface SubscriptionTierProps {}
 
@@ -32,8 +33,33 @@ const SubscriptionTier = ({}: SubscriptionTierProps) => {
   return (
     <>
       <div className="grid grid-cols-12 gap-6" id="plan">
-        <div className="col-span-12 lg:col-span-5">
-          <p className="text-base sticky top-16">Subscription plan</p>
+        <div className="col-span-12 lg:col-span-5 space-y-6">
+          <div className="sticky space-y-6 top-16">
+            <p className="text-base">Subscription plan</p>
+            <p className="text-sm text-scale-1000">
+              To manage your billing address, emails or tax IDs, head to your{' '}
+              <Link href="https://supabase.com/pricing">
+                <a target="_blank" rel="noreferrer">
+                  <p className="text-sm text-green-900 transition hover:text-green-1000">
+                    organization settings
+                  </p>
+                </a>
+              </Link>
+            </p>
+            <div className="space-y-2">
+              <p className="text-sm text-scale-1100">More information</p>
+              <div>
+                <Link href="https://supabase.com/pricing">
+                  <a target="_blank" rel="noreferrer">
+                    <div className="flex items-center space-x-2 opacity-50 hover:opacity-100 transition">
+                      <p className="text-sm">Pricing</p>
+                      <IconExternalLink size={16} strokeWidth={1.5} />
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
         {isLoading ? (
           <div className="col-span-12 lg:col-span-7 space-y-2">
@@ -105,6 +131,22 @@ const SubscriptionTier = ({}: SubscriptionTierProps) => {
               labelBottomClass="!text-scale-1000 pb-1"
               labelTop={`${daysToCycleEnd} Days left`}
             />
+
+            <Panel>
+              <Panel.Content className="flex justify-between items-center flex-col lg:flex-row space-y-6 md:space-y-0">
+                <div className="flex space-x-3 items-center font-mono tracking-wide">
+                  <IconCreditCard />
+                  <span className="uppercase hidden xl:visible">Visa</span>
+                  <span>**** **** **** 1234</span>
+                </div>
+                <div className="flex flex-row space-x-3">
+                  <span>Expires 10/27</span>
+                </div>
+                <div>
+                  <Button type="default">Change</Button>
+                </div>
+              </Panel.Content>
+            </Panel>
           </div>
         )}
       </div>
