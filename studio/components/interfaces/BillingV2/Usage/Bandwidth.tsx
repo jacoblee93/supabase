@@ -101,7 +101,7 @@ const Bandwidth = ({ projectRef }: BandwidthProps) => {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <p className="text-sm">{attribute.name} used per day</p>
+                    <p className="text-sm">{attribute.name} per day</p>
                     {!usageBasedBilling && usageRatio >= 1 ? (
                       <div className="flex items-center space-x-2 min-w-[115px]">
                         <IconAlertTriangle
@@ -154,7 +154,9 @@ const Bandwidth = ({ projectRef }: BandwidthProps) => {
                     </p>
                   </div>
                   <div className="flex items-center justify-between py-1">
-                    <p className="text-xs text-scale-1000">Used in period</p>
+                    <p className="text-xs text-scale-1000">
+                      {attribute.chartPrefix || 'Used '}in period
+                    </p>
                     <p className="text-xs">{formatBytes(usageMeta?.usage ?? 0)}</p>
                   </div>
                   {usageMeta?.limit > 0 && (
@@ -183,7 +185,7 @@ const Bandwidth = ({ projectRef }: BandwidthProps) => {
                 </div>
               ) : (
                 <UsageBarChart
-                  name={attribute.name}
+                  name={`${attribute.chartPrefix || ''}${attribute.name}`}
                   unit={attribute.unit}
                   attribute={attribute.attribute}
                   data={chartData}

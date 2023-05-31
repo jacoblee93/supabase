@@ -192,7 +192,7 @@ const Infrastructure = ({ projectRef }: InfrastructureProps) => {
                       <span className={attribute.key === 'ram_usage' ? 'lowercase' : ''}>
                         {attribute.name}
                       </span>{' '}
-                      usage per {interval === '1d' ? 'day' : 'hour'}
+                      per {interval === '1d' ? 'day' : 'hour'}
                     </p>
                   )}
                 </div>
@@ -211,7 +211,7 @@ const Infrastructure = ({ projectRef }: InfrastructureProps) => {
                 </div>
               ) : chartData.length ? (
                 <UsageBarChart
-                  name={attribute.name}
+                  name={`${attribute.chartPrefix || ''}${attribute.name}`}
                   unit={attribute.unit}
                   attribute={attribute.attribute}
                   data={chartData}

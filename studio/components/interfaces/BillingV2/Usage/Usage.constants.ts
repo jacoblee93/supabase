@@ -11,6 +11,7 @@ export interface CategoryAttribute {
   key: string // Property from project usage
   attribute: string // For querying against stats-daily / infra-monitoring
   name: string
+  chartPrefix?: string
   unit: 'bytes' | 'absolute' | 'percentage'
   links?: {
     name: string
@@ -116,7 +117,8 @@ export const USAGE_CATEGORIES: {
         anchor: 'dbSize',
         key: 'db_size',
         attribute: 'total_db_size_bytes',
-        name: 'Max Database size',
+        name: 'Database size',
+        chartPrefix: 'Avg ',
         unit: 'bytes',
         description:
           'Billing is based on the average daily database size in GB throughout the billing period.',
@@ -132,7 +134,8 @@ export const USAGE_CATEGORIES: {
         anchor: 'storageSize',
         key: 'storage_size',
         attribute: 'total_storage_size_bytes',
-        name: 'Max Storage size',
+        name: 'Storage size',
+        chartPrefix: 'Max ',
         unit: 'bytes',
         description:
           'Sum of all objects in your storage buckets.\nBilling is based on the average size in GB throughout your billing period',
@@ -142,7 +145,8 @@ export const USAGE_CATEGORIES: {
         anchor: 'funcCount',
         key: 'func_count',
         attribute: 'total_func_count',
-        name: 'Max Edge function count',
+        name: 'Edge function count',
+        chartPrefix: 'Max ',
         unit: 'absolute',
         description:
           'Number of serverless functions in your project.\nBilling is based on the maximum amount of functions at any point in time throughout your billing period',
@@ -185,7 +189,8 @@ export const USAGE_CATEGORIES: {
         unit: 'absolute',
         description:
           'We distinctly count all images that were transformed in the billing period, ignoring any transformations. If you transform one image with different transformations, it only counts as one.\nBilling is based on the unique count of (origin) images that used transformations throughout the billing period. Resets every billing cycle.',
-        chartDescription: 'The data shown here is refreshed over a period of 24 hours.\nThe data points are relative to the beginning of the billing period.',
+        chartDescription:
+          'The data shown here is refreshed over a period of 24 hours.\nThe data points are relative to the beginning of the billing period.',
       },
       {
         anchor: 'functionInvocations',
@@ -211,7 +216,8 @@ export const USAGE_CATEGORIES: {
         anchor: 'realtimePeakConnection',
         key: 'realtime_peak_connection',
         attribute: 'total_realtime_peak_connection',
-        name: 'Max Realtime peak connections',
+        name: 'Realtime peak connections',
+        chartPrefix: 'Max ',
         unit: 'absolute',
         description:
           'Total number of successful connections (not connection attempts).\nBilling is based on the maximum amount of concurrent peak connections throughout your billing period.',
