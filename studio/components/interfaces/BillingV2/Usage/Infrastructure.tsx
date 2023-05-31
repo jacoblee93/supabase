@@ -185,14 +185,14 @@ const Infrastructure = ({ projectRef }: InfrastructureProps) => {
               <div className="space-y-1">
                 <div className="flex flex-row justify-between">
                   {attribute.key === 'disk_io_consumption' ? (
-                    <p>IO Budget consumed</p>
+                    <p>IO Budget consumed per day</p>
                   ) : (
                     <p>
                       Max{' '}
                       <span className={attribute.key === 'ram_usage' ? 'lowercase' : ''}>
                         {attribute.name}
                       </span>{' '}
-                      usage
+                      usage per {interval === '1d' ? 'day' : 'hour'}
                     </p>
                   )}
                 </div>

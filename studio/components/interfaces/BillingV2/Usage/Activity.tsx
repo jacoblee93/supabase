@@ -176,7 +176,7 @@ const Activity = ({ projectRef }: ActivityProps) => {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <p className="text-sm">{attribute.name} quota usage</p>
+                        <p className="text-sm">{attribute.name} used per day</p>
                         {!usageBasedBilling && usageRatio >= 1 ? (
                           <div className="flex items-center space-x-2 min-w-[115px]">
                             <IconAlertTriangle
@@ -237,7 +237,7 @@ const Activity = ({ projectRef }: ActivityProps) => {
                         )}
                       </div>
                       <div className="flex items-center justify-between py-1">
-                        <p className="text-xs text-scale-1000">Used</p>
+                        <p className="text-xs text-scale-1000">Used in period</p>
                         <p className="text-xs">{(usageMeta?.usage ?? 0).toLocaleString()}</p>
                       </div>
                       {usageMeta.limit > 0 && (
@@ -269,15 +269,12 @@ const Activity = ({ projectRef }: ActivityProps) => {
                     </div>
                   ) : (
                     <UsageBarChart
-                      hasQuota={usageMeta.limit > 0}
                       name={attribute.name}
                       unit={attribute.unit}
                       attribute={attribute.attribute}
                       data={chartData}
-                      yLimit={usageMeta?.limit ?? 0}
                       yLeftMargin={chartMeta[attribute.key].margin}
                       yFormatter={(value) => ChartYFormatterCompactNumber(value, attribute.unit)}
-                      quotaWarningType={isFreeTier || isProTier ? 'danger' : 'warning'}
                     />
                   )}
                 </>

@@ -116,7 +116,7 @@ export const USAGE_CATEGORIES: {
         anchor: 'dbSize',
         key: 'db_size',
         attribute: 'total_db_size_bytes',
-        name: 'Database size',
+        name: 'Max Database size',
         unit: 'bytes',
         description:
           'Billing is based on the average daily database size in GB throughout the billing period.',
@@ -132,7 +132,7 @@ export const USAGE_CATEGORIES: {
         anchor: 'storageSize',
         key: 'storage_size',
         attribute: 'total_storage_size_bytes',
-        name: 'Storage size',
+        name: 'Max Storage size',
         unit: 'bytes',
         description:
           'Sum of all objects in your storage buckets.\nBilling is based on the average size in GB throughout your billing period',
@@ -142,7 +142,7 @@ export const USAGE_CATEGORIES: {
         anchor: 'funcCount',
         key: 'func_count',
         attribute: 'total_func_count',
-        name: 'Edge function count',
+        name: 'Max Edge function count',
         unit: 'absolute',
         description:
           'Number of serverless functions in your project.\nBilling is based on the maximum amount of functions at any point in time throughout your billing period',
@@ -159,33 +159,33 @@ export const USAGE_CATEGORIES: {
         anchor: 'mau',
         key: 'monthly_active_users',
         attribute: 'total_auth_billing_period_mau',
-        name: 'Monthly active users',
+        name: 'Monthly Active Users',
         unit: 'absolute',
         description:
           'Users who log in or refresh their token count towards MAU.\nBilling is based on the sum of distinct users requesting your API throughout the billing period. Resets every billing cycle.',
         chartDescription:
-          'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.',
+          'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.\nThe data points are relative to the beginning of the billing period.',
       },
       {
         anchor: 'mauSso',
         key: 'monthly_active_sso_users',
         attribute: 'total_auth_billing_period_sso_mau',
-        name: 'Monthly active single sign-on users',
+        name: 'Monthly Active SSO Users',
         unit: 'absolute',
         description:
           'SSO users who log in or refresh their token count towards SSO MAU.\nBilling is based on the sum of distinct Single Sign-On users requesting your API throughout the billing period. Resets every billing cycle.',
         chartDescription:
-          'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.',
+          'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.\nThe data points are relative to the beginning of the billing period.',
       },
       {
         anchor: 'storageImageTransformations',
         key: 'storage_image_render_count',
         attribute: 'total_storage_image_render_count',
-        name: 'Storage image transformations',
+        name: 'Storage Image Transformations',
         unit: 'absolute',
         description:
           'We distinctly count all images that were transformed in the billing period, ignoring any transformations. If you transform one image with different transformations, it only counts as one.\nBilling is based on the unique count of (origin) images that used transformations throughout the billing period. Resets every billing cycle.',
-        chartDescription: 'The data shown here is refreshed over a period of 24 hours.',
+        chartDescription: 'The data shown here is refreshed over a period of 24 hours.\nThe data points are relative to the beginning of the billing period.',
       },
       {
         anchor: 'functionInvocations',
@@ -211,7 +211,7 @@ export const USAGE_CATEGORIES: {
         anchor: 'realtimePeakConnection',
         key: 'realtime_peak_connection',
         attribute: 'total_realtime_peak_connection',
-        name: 'Realtime peak connections',
+        name: 'Max Realtime peak connections',
         unit: 'absolute',
         description:
           'Total number of successful connections (not connection attempts).\nBilling is based on the maximum amount of concurrent peak connections throughout your billing period.',
