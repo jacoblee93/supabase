@@ -30,7 +30,7 @@ export const USAGE_CATEGORIES: {
   {
     key: 'infra',
     name: 'Infrastructure',
-    description: 'Usage statistics related to your Postgres server',
+    description: 'Usage statistics related to your server instance',
     attributes: [
       {
         anchor: 'cpu',
