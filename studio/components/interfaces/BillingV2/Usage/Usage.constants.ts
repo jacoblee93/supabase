@@ -63,9 +63,9 @@ export const USAGE_CATEGORIES: {
         ],
       },
       {
-        anchor: 'disk_io_budget',
-        key: 'disk_io_budget',
-        attribute: 'disk_io_budget',
+        anchor: 'disk_io',
+        key: 'disk_io_consumption',
+        attribute: 'disk_io_consumption',
         name: 'Disk IO bandwidth',
         unit: 'percentage',
         links: [
