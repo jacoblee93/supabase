@@ -168,7 +168,7 @@ export const USAGE_CATEGORIES: {
         description:
           'Users who log in or refresh their token count towards MAU.\nBilling is based on the sum of distinct users requesting your API throughout the billing period. Resets every billing cycle.',
         chartDescription:
-          'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.\nThe data points are relative to the beginning of the billing period.',
+          'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.\nThe data points are relative to the beginning of your billing period.',
       },
       {
         anchor: 'mauSso',
@@ -179,7 +179,7 @@ export const USAGE_CATEGORIES: {
         description:
           'SSO users who log in or refresh their token count towards SSO MAU.\nBilling is based on the sum of distinct Single Sign-On users requesting your API throughout the billing period. Resets every billing cycle.',
         chartDescription:
-          'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.\nThe data points are relative to the beginning of the billing period.',
+          'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.\nThe data points are relative to the beginning of your billing period.',
       },
       {
         anchor: 'storageImageTransformations',
@@ -190,7 +190,7 @@ export const USAGE_CATEGORIES: {
         description:
           'We distinctly count all images that were transformed in the billing period, ignoring any transformations. If you transform one image with different transformations, it only counts as one.\nBilling is based on the unique count of (origin) images that used transformations throughout the billing period. Resets every billing cycle.',
         chartDescription:
-          'The data shown here is refreshed over a period of 24 hours.\nThe data points are relative to the beginning of the billing period.',
+          'The data shown here is refreshed over a period of 24 hours.\nThe data points are relative to the beginning of your billing period.',
       },
       {
         anchor: 'functionInvocations',
