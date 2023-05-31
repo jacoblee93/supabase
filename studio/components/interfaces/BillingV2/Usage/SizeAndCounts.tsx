@@ -116,10 +116,7 @@ const SizeAndCounts = ({ projectRef }: SizeAndCountsProps) => {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <p className="text-sm">
-                      {attribute.chartPrefix || ''}
-                      {attribute.name} per day
-                    </p>
+                    <p className="text-sm">{attribute.name} usage</p>
                     {!usageBasedBilling && usageRatio >= 1 ? (
                       <div className="flex items-center space-x-2 min-w-[115px]">
                         <IconAlertTriangle
@@ -224,7 +221,7 @@ const SizeAndCounts = ({ projectRef }: SizeAndCountsProps) => {
               <div className="space-y-1">
                 <p>
                   {attribute.chartPrefix || ''}
-                  {attribute.name} over time
+                  {attribute.name} per day
                 </p>
                 {attribute.chartDescription.split('\n').map((paragraph, idx) => (
                   <p key={`para-${idx}`} className="text-sm text-scale-1000">

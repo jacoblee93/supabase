@@ -118,7 +118,7 @@ export const USAGE_CATEGORIES: {
         key: 'db_size',
         attribute: 'total_db_size_bytes',
         name: 'Database size',
-        chartPrefix: 'Avg ',
+        chartPrefix: 'Average ',
         unit: 'bytes',
         description:
           'Billing is based on the average daily database size in GB throughout the billing period.',
@@ -185,7 +185,7 @@ export const USAGE_CATEGORIES: {
         anchor: 'storageImageTransformations',
         key: 'storage_image_render_count',
         attribute: 'total_storage_image_render_count',
-        name: 'Storage Image Transformations',
+        name: 'Storage image transformations',
         unit: 'absolute',
         description:
           'We distinctly count all images that were transformed in the billing period, ignoring any transformations. If you transform one image with different transformations, it only counts as one.\nBilling is based on the unique count of (origin) images that used transformations throughout the billing period. Resets every billing cycle.',
