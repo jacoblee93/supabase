@@ -75,7 +75,7 @@ export const USAGE_CATEGORIES: {
           },
         ],
         description:
-          'SSD Disks are attached to your servers and the disk performance of your workload is determined by the Disk IO bandwidth of this connection.',
+          'SSD Disks are attached to your servers. The disk performance of your workload is determined by the Disk IO bandwidth of this connection.',
         chartDescription: '',
       },
     ],
@@ -92,7 +92,7 @@ export const USAGE_CATEGORIES: {
         name: 'Database egress',
         unit: 'bytes',
         description:
-          'Contains any outgoing traffic (egress) from your database\nBilling is based on the total sum of egress in GB throughout your billing period.',
+          'Contains any outgoing traffic (egress) from your database.\nBilling is based on the total sum of egress in GB throughout your billing period.',
         chartDescription: 'The data shown here is refreshed over a period of 24 hours.',
       },
       {
@@ -135,7 +135,7 @@ export const USAGE_CATEGORIES: {
         name: 'Storage size',
         unit: 'bytes',
         description:
-          'Sum of all objects in your storage buckets\nBilling is based on the average size in GB throughout your billing period',
+          'Sum of all objects in your storage buckets.\nBilling is based on the average size in GB throughout your billing period',
         chartDescription: 'The data shown here is refreshed over a period of 24 hours.',
       },
       {
@@ -145,7 +145,7 @@ export const USAGE_CATEGORIES: {
         name: 'Edge function count',
         unit: 'absolute',
         description:
-          'Number of serverless functions in your project\nBilling is based on the maximum amount of functions at any point in time throughout your billing period',
+          'Number of serverless functions in your project.\nBilling is based on the maximum amount of functions at any point in time throughout your billing period',
         chartDescription: 'The data shown here is refreshed over a period of 24 hours.',
       },
     ],
@@ -162,7 +162,7 @@ export const USAGE_CATEGORIES: {
         name: 'Monthly active users',
         unit: 'absolute',
         description:
-          'Users who log in or refresh their token\nBilling is based on the sum of distinct users requesting your API throughout the billing period. Resets every billing cycle.',
+          'Users who log in or refresh their token count towards MAU.\nBilling is based on the sum of distinct users requesting your API throughout the billing period. Resets every billing cycle.',
         chartDescription:
           'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.',
       },
@@ -173,7 +173,7 @@ export const USAGE_CATEGORIES: {
         name: 'Monthly active single sign-on users',
         unit: 'absolute',
         description:
-          'SSO users who log in or refresh their token\nBilling is based on the sum of distinct Single Sign-On users requesting your API throughout the billing period. Resets every billing cycle.',
+          'SSO users who log in or refresh their token count towards SSO MAU.\nBilling is based on the sum of distinct Single Sign-On users requesting your API throughout the billing period. Resets every billing cycle.',
         chartDescription:
           'The data shown here is refreshed over a period of 24 hours and resets at the beginning of every billing period.',
       },
@@ -214,7 +214,7 @@ export const USAGE_CATEGORIES: {
         name: 'Realtime peak connections',
         unit: 'absolute',
         description:
-          'Total number of successful connections (not connection attempts)\nBilling is based on the maximum amount of concurrent peak connections throughout your billing period.',
+          'Total number of successful connections (not connection attempts).\nBilling is based on the maximum amount of concurrent peak connections throughout your billing period.',
         chartDescription: 'The data shown here is refreshed over a period of 24 hours.',
       },
     ],
